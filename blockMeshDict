@@ -1,0 +1,161 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  10
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+scale 0.01;
+
+r 1.5;   // in cm
+
+k #calc "$r*0.7071067";
+
+vertices
+(
+	// pre-block starting 0
+	
+	(0 0 0.5)
+	(15 0 0.5)
+	(15 0 -0.5)
+	(0 0 -0.5)
+	(0 15 0.5)
+	(15 15 0.5)
+	(15 15 -0.5)
+	(0 15 -0.5)
+	
+	//cylinder block A starting 8 
+	(30 0 0.5)		
+	(30 0 -0.5)		
+	(#calc"22.5-$k" #calc"7.5-$k" 0.5)		
+	(#calc"22.5+$k" #calc"7.5-$k" 0.5)
+	(#calc"22.5+$k" #calc"7.5-$k" -0.5)
+	(#calc"22.5-$k" #calc"7.5-$k" -0.5)
+	
+	//cylinder block B starting at 
+	(#calc"22.5+$k" #calc"7.5+$k" 0.5)
+	(#calc"22.5+$k" #calc"7.5+$k" -0.5)
+	(30 15 0.5)
+	(30 15 -0.5)
+	
+	//cylinder block C
+	(#calc"22.5-$k" #calc"7.5+$k" 0.5)
+	(#calc"22.5-$k" #calc"7.5+$k" -0.5)
+	
+	//post block
+	(75 0 0.5)
+	(75 0 -0.5)
+	(75 15 0.5)
+	(75 15 -0.5)
+	
+	
+);				
+	
+blocks
+(
+    
+	hex ( 0  1  2  3  4  5  6  7) ( 60 1 60) simpleGrading (1 1 1)		//pre-block
+	
+	hex (1 8 9 2 10 11 12 13)  (60 1 60) simpleGrading (1 1 1)		//A
+	hex (11 8 9 12 14 16 17 15) (60 1 60) simpleGrading (1 1 1)		//B
+	hex (18 14 15 19 5 16 17 6) (60 1 60) simpleGrading (1 1 1)		//C
+	hex (1 10 13 2 5 18 19 6)   (60 1 60) simpleGrading (1 1 1)		//D
+	
+	hex (8 20 21 9 16 22 23 17) (160 1 60) simpleGrading (1 1 1)		//post-block
+	
+);
+
+edges
+(
+	arc 10 11 (22.5 #calc"7.5-$r" 0.5)
+	arc 13 12 (22.5 #calc"7.5-$r" -0.5)
+	arc 11 14 (#calc"22.5+$r" 7.5 0.5)
+	arc 12 15 (#calc"22.5+$r" 7.5 -0.5)
+	arc 14 18 (22.5 #calc"7.5+$r" 0.5)
+	arc 15 19 (22.5 #calc"7.5+$r" -0.5)
+	arc 18 10 (#calc"22.5-$r" 7.5 0.5)
+	arc 19 13 (#calc"22.5-$r" 7.5 -0.5)
+	
+);
+
+boundary
+(
+
+	inlet
+	{
+		type patch;
+		faces
+		(
+			(0 4 7 3)
+		);
+		
+	}
+	
+	outlet
+	{
+		type patch;
+		faces
+		(
+			(20 21 23 22)
+		);
+	}
+	
+	walls 
+	{
+		type wall;
+		faces
+		(
+			(4 5 6 7)
+			(0 3 2 1)
+			(1 2 9 8)
+			(5 16 17 6)
+			(8 9 21 20)
+			(16 22 23 17)
+		);
+	}
+	
+	cylinder
+	{
+		type wall;
+		faces
+		(	
+			(10 11 12 13)
+			(11 14 15 12)
+			(14 18 19 15)
+			(10 13 19 18)
+		);
+	}
+	
+	frontAndBack
+	{
+		type empty;
+		faces
+		(
+			// front
+			(0 1 4 5)
+			(1 8 11 10)
+			(8 16 14 11)
+			(1 10 18 5)
+			(5 18 14 16)
+			(8 20 22 16)
+			
+			// back
+			(2 3 7 6)
+			(2 13 12 9)
+			(6 17 15 19)
+			(2 6 19 13)
+			(9 12 15 17)
+			(9 17 23 21)
+		
+		);
+	}
+);
+			
