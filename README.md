@@ -4,7 +4,7 @@ This repo contains the files for the test case of flow around cylinder using Ope
 - Re = 7500
 - Inlet Velocity = 0.25 m/s
 - Diameter of Cylinder = 0.03 m
-- 
+
 For the purposes of this case, the use of the following schemes has been made:-
 - For time derivatives, the steady state scheme has been utilized.
 - For gradient schemes, the conventional Gaussian scheme with linear interpolation has been used.
