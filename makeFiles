@@ -1,0 +1,9 @@
+cat PyFoamRunner.mpirun.logfile | grep -w 'Time =' | cut -d' ' -f3 | tr -d '(' > time
+cat PyFoamRunner.mpirun.logfile | grep 'of mass' | cut -d' ' -f8 | tr -d '('  > xcenter
+cat PyFoamRunner.mpirun.logfile | grep 'of mass' | cut -d' ' -f9 | tr -d '('  > ycenter
+cat PyFoamRunner.mpirun.logfile | grep 'of mass' | cut -d' ' -f10 | tr -d ')'  > zcenter
+cat PyFoamRunner.mpirun.logfile | grep 'Linear' | cut -d' ' -f7 | tr -d '(' > vx
+cat PyFoamRunner.mpirun.logfile | grep 'Linear' | cut -d' ' -f8 | tr -d ' ' > vy
+cat PyFoamRunner.mpirun.logfile | grep 'Linear' | cut -d' ' -f9 | tr -d ')' > vz
+
+paste time xcenter ycenter zcenter vx vy vz > plotfile
