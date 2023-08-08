@@ -11,7 +11,7 @@ The test case of an elastically mounted cylinder has been studied extensively by
 
 Finally, we arrive at the paper this project is based on. Vicente-Ludlam et al. made the use of the Lattice Boltzmann Method to simulate the test case of a rotating, elastically mounted cylinder with one degree of freedom. Their setup involved a constantly changing rotating velocity which was dependent on either the velocity or the acceleration of the cylinder in question. **In this project we will be analyzing a similar rotation law to setup a feedback control system using a custom coded boundary condition in OpenFOAM**
 
-# Setup
+## Setup
 The cylinder is setup in a cross-flow configuration and only allowed to move in the transverse direction. It is attached to a spring and the rotation is given about its center of mass. The simulation is 2D in nature and involves zero mass damping. The rotation-feedback law relates the angula velocity with the transverses velocity of the The following equations are valid for the non-dimensional parameters.
 
 ```math
@@ -26,7 +26,10 @@ m^* = \frac{m}{\frac{\pi}{4}\rho D^2 H}
 ```math
 k^* = \frac{k}{D}
 ```
-For the following test case the value of the Reynold's Number and Mass Ratio is fixed at 100 and 10 respectively. The domain size is 60DX40D with the cylinder situated at (20D,20D).The reduced velocity is varied by changing the spring constant in dynamicMeshDict. The mesh consists of two regions, the first is the cylinder mesh that will actually execute the motion and the second is the rectangular background mesh with two refinement zones. 
+For the following test case the value of the Reynold's Number and Mass Ratio is fixed at 100 and 10 respectively. 
+
+## The Chimera Method - Mesh Setup
+The domain size is 60DX40D with the cylinder situated at (20D,20D).The reduced velocity is varied by changing the spring constant in dynamicMeshDict. The mesh consists of two regions, the first is the cylinder mesh that will actually execute the motion and the second is the rectangular background mesh with two refinement zones. These two meshes are merged or connected using an overset region that interpolates information between the two meshes. This allows for the existences of two disconnected meshes that can interact with each other, this method is known as Chimera or the Overset Mesh Implementation. While it can simulate complex mesh motion and allow for a greater degree of freedom, it is prone to interpolation errors. Even so, overset meshes are a very powerful and widely used method for simulating moving meshes in CFD. 
 
 ![1-s2 0-S0889974616305096-gr1_lrg](https://github.com/areenraj/feedback-flow-control-openfoam/assets/80944803/85fa6952-359a-4484-ad82-fc12a288a875)
 *Image taken from D. Vicente-Ludlam, A. Barrero-Gil, A. Velazquez* - https://doi.org/10.1016/j.jfluidstructs.2017.05.001
@@ -35,7 +38,7 @@ For the following test case the value of the Reynold's Number and Mass Ratio is 
 ![mesh](https://github.com/areenraj/feedback-flow-control-openfoam/assets/80944803/62722f46-7666-4029-8134-af314dc3917d)
 *The stationary domain that the cylinder oscillates in*
  
-# Mesh Convergence Study
+## Mesh Convergence Study
 A mesh convergence study was done using Shiels et al. as the reference paper - https://doi.org/10.1006/jfls.2000.0330. The test case simulated was that of mass ratio 5 and non-dimensionalized spring constant 4.74. Increasing refinement in each mesh case was employed. The finer mesh seems to have achieved convergence in results to the paper and is ready to be used for the simulation. 
 
 |               |Coarse Mesh |Fine Mesh    |Finer Mesh   |Shiels et al|
@@ -44,3 +47,15 @@ A mesh convergence study was done using Shiels et al. as the reference paper - h
 |$C_L$ Amplitude|   0.729    |   0.0515    |   0.038805  |     0.04   |
 |$St$           |   0.17175  |   0.15335   |   0.1565    |     0.156  |
 |$A^*$          |   0.7239   |   0.3683    |   0.421     |     0.46   |
+
+## Custom Boundary Condition
+The implementation of the new boundary condition - "forcedRotation" - is needed as OpenFOAM does not support both free and forced motion at the same time. Our cylinder's translation is free motion while the rotation is dependent only on the velocity and is not affected by the fluid moments. To counter this, a novel boundary condition is used, the setup of this BC can be divided into two steps.
+1. Getting the velocity of the overset mesh, this is the free translational velocity that is influenced by fluid forces.
+2. Adding a rotational velocity on the boundary walls of the cylinder to account for the rotation.
+
+Vector addition of both these velocities will give us the required result. The implementation is as follows
+
+![carbon](https://github.com/areenraj/feedback-flow-control-openfoam/assets/80944803/5e737305-95e1-4951-8109-25ccf7134db2)
+
+## Results and Inference
+For the case of reduced velocity
