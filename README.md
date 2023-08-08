@@ -12,7 +12,7 @@ The test case of an elastically mounted cylinder has been studied extensively by
 Finally, we arrive at the paper this project is based on. Vicente-Ludlam et al. made the use of the Lattice Boltzmann Method to simulate the test case of a rotating, elastically mounted cylinder with one degree of freedom. Their setup involved a constantly changing rotating velocity which was dependent on either the velocity or the acceleration of the cylinder in question. **In this project we will be analyzing a similar rotation law to setup a feedback control system using a custom coded boundary condition in OpenFOAM**
 
 # Setup
-The cylinder is setup in a cross-flow configuration and only allowed to move in the transverse direction. It is attached to a spring and the rotation is given about its center of mass. The simulation is 2D in nature and involves zero mass damping. The following equations are valid for the non-dimensional parameters.
+The cylinder is setup in a cross-flow configuration and only allowed to move in the transverse direction. It is attached to a spring and the rotation is given about its center of mass. The simulation is 2D in nature and involves zero mass damping. The rotation-feedback law relates the angula velocity with the transverses velocity of the The following equations are valid for the non-dimensional parameters.
 
 ```math
 Re = \frac{U_{\inf}D}{\nu}
@@ -33,5 +33,5 @@ For the following test case the value of the Reynold's Number and Mass Ratio is 
 ![cylinder](https://github.com/areenraj/feedback-flow-control-openfoam/assets/80944803/eec8eb6e-ae6f-482d-8323-94d0385db67e)
 *The circular mesh that represents the body and a little bit of the surrounding domain that actually oscillates*
 ![mesh](https://github.com/areenraj/feedback-flow-control-openfoam/assets/80944803/62722f46-7666-4029-8134-af314dc3917d)
-*The stationay domain that the cylinder oscillates in*
+*The stationary domain that the cylinder oscillates in*
  
