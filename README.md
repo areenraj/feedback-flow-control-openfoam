@@ -57,8 +57,8 @@ Vector addition of both these velocities will give us the required result. The i
 
 ![carbon](https://github.com/areenraj/feedback-flow-control-openfoam/assets/80944803/5e737305-95e1-4951-8109-25ccf7134db2)
 
-## Results and Inference
-For running the test case following the given commands
+## Solution Setup
+For running the test case follow the given commands.
 
 1.Initialize the 0 directory
 ```
@@ -82,3 +82,11 @@ checkMesh
 setFields
 tansformPoints -scale 0.01
 ```
+4. Starting the solution
+```
+potentialFoam -pName p -writephi
+decomposePar
+mpirun -np 8 renumberMesh -overwrite -parallel
+pyFoamPlotRunner.py mpirun -np 8 overPimpleDyMFoam -parallel 
+```
+The solver used is overPimpleDymFoam available in the ESI version of OpenFOAM, it utilizes a merged PISO-SIMPLE algorithm. The solution is initialized by potentialFoam and the divergence scheme is that of Gauss QUICK. A large amount of outer corectors are utilized along with a Max Courant Number of 0.5. The interpolation scheme for the overset meshes is the standard inverseDistance. 
