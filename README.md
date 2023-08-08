@@ -23,6 +23,9 @@ U^* = \frac{U_{\inf}}{f_ND}
 ```math
 m^* = \frac{m}{\frac{\pi}{4}\rho D^2 H}
 ```
-For the following test case the value of the Reynold's Number and Mass Ratio is fixed at 100 and 10 respectively. The domain size is 60DX40D with the cylinder situated at (20D,20D).The reduced velocity is varied by changing the spring constant in dynamicMeshDict. 
+For the following test case the value of the Reynold's Number and Mass Ratio is fixed at 100 and 10 respectively. The domain size is 60DX40D with the cylinder situated at (20D,20D).The reduced velocity is varied by changing the spring constant in dynamicMeshDict. The mesh consists of two regions, the first is the cylinder mesh that will actually execute the motion and the second is the rectangular background mesh with two refinement zones. 
+
+![cylinder](https://github.com/areenraj/feedback-flow-control-openfoam/assets/80944803/eec8eb6e-ae6f-482d-8323-94d0385db67e)
+![mesh](https://github.com/areenraj/feedback-flow-control-openfoam/assets/80944803/62722f46-7666-4029-8134-af314dc3917d)
  
  
