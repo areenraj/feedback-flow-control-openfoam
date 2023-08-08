@@ -25,7 +25,10 @@ m^* = \frac{m}{\frac{\pi}{4}\rho D^2 H}
 ```
 For the following test case the value of the Reynold's Number and Mass Ratio is fixed at 100 and 10 respectively. The domain size is 60DX40D with the cylinder situated at (20D,20D).The reduced velocity is varied by changing the spring constant in dynamicMeshDict. The mesh consists of two regions, the first is the cylinder mesh that will actually execute the motion and the second is the rectangular background mesh with two refinement zones. 
 
+![1-s2 0-S0889974616305096-gr1_lrg](https://github.com/areenraj/feedback-flow-control-openfoam/assets/80944803/85fa6952-359a-4484-ad82-fc12a288a875)
+*Image taken from D. Vicente-Ludlam, A. Barrero-Gil, A. Velazquez* - https://doi.org/10.1016/j.jfluidstructs.2017.05.001
 ![cylinder](https://github.com/areenraj/feedback-flow-control-openfoam/assets/80944803/eec8eb6e-ae6f-482d-8323-94d0385db67e)
+*The circular mesh that represents the body and a little bit of the surrounding domain that actually oscillates*
 ![mesh](https://github.com/areenraj/feedback-flow-control-openfoam/assets/80944803/62722f46-7666-4029-8134-af314dc3917d)
- 
+*The stationay domain that the cylinder oscillates in*
  
