@@ -1,6 +1,6 @@
 # Feedback Flow Control using a Custom Boundary Condition in OpenFOAM
 
-*Before we begin, I would like to thank Michael Alleto's tutorial for the case of the non-rotating cylinder. I would also like to thank Jozsef Nagzy and his excellent explanation of the use of overset meshes in OpenFOAM.*
+*Before we begin, I would like to thank Michael Alletto's tutorial for the case of the non-rotating cylinder. I would also like to thank Jozsef Nagzy and his excellent explanation of the use of overset meshes in OpenFOAM.*
 
 ## Introduction
 Flow Induced Vibrations (FIV) is an important field of study that deals with the response of structures in various flow configurations with one or more degrees of freedom. It is a phenomena which is especially relevant in the areas of offshore drilling, energy harvesting and even vehicle aerodynamics. 
