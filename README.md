@@ -58,4 +58,27 @@ Vector addition of both these velocities will give us the required result. The i
 ![carbon](https://github.com/areenraj/feedback-flow-control-openfoam/assets/80944803/5e737305-95e1-4951-8109-25ccf7134db2)
 
 ## Results and Inference
-For the case of reduced velocity
+For running the test case following the given commands
+
+1.Initialize the 0 directory
+```
+cd backgroundMesh
+restore0Dir
+```
+2. Cylinder Mesh
+```
+cd cylinderMesh
+blockMesh
+```
+3. Background Mesh
+```
+cd backgroundMesh
+blockMesh
+topoSet
+refineMesh -dict system/refineMeshDictR1 -overwrite
+refineMesh -dict system/refineMeshDict -overwrite
+mergeMeshes . ../cylinderMesh -overwrite
+checkMesh
+setFields
+tansformPoints -scale 0.01
+```
