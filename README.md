@@ -12,7 +12,7 @@ The test case of an elastically mounted cylinder has been studied extensively by
 Finally, we arrive at the paper this project is based on. Vicente-Ludlam et al. made the use of the Lattice Boltzmann Method to simulate the test case of a rotating, elastically mounted cylinder with one degree of freedom. Their setup involved a constantly changing rotating velocity which was dependent on either the velocity or the acceleration of the cylinder in question. **In this project we will be analyzing a similar rotation law to setup a feedback control system using a custom coded boundary condition in OpenFOAM**
 
 ## Setup
-The cylinder is setup in a cross-flow configuration and only allowed to move in the transverse direction. It is attached to a spring and the rotation is given about its center of mass. The simulation is 2D in nature and involves zero mass damping. The rotation-feedback law relates the angula velocity with the transverses velocity of the The following equations are valid for the non-dimensional parameters.
+The cylinder is setup in a cross-flow configuration and only allowed to move in the transverse direction. It is attached to a spring and the rotation is given about its center of mass. The simulation is 2D in nature and involves zero mass damping. The rotation-feedback law relates the angular velocity with the transverses velocity of the The following equations are valid for the non-dimensional parameters.
 
 ```math
 Re = \frac{U_{\inf}D}{\nu}
@@ -93,4 +93,8 @@ The solver used is overPimpleDymFoam available in the ESI version of OpenFOAM, i
 
 ## Results and Inference
 For the case of reduced velocity 5.5 and a fixed $k^* = 2$, we have the following velocity contours. 
-![contours](https://github.com/areenraj/feedback-flow-control-openfoam/assets/80944803/21243e4b-f574-47a3-8c41-1ccceee9bd70)
+
+
+https://github.com/areenraj/feedback-flow-control-openfoam/assets/80944803/c6506ad4-2e8d-4e6e-9e0c-5e495b4473e7
+
+
