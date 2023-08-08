@@ -1,4 +1,4 @@
-# cylinder-flow-openfoam
+# Amplitude Reduction Flow Control using Postion Feedback Rotation Law
 
 This repo contains the files for the test case of flow around cylinder using OpenFOAM. The case has the following parameters:-
 - Re = 7500
