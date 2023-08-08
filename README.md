@@ -14,9 +14,15 @@ Finally, we arrive at the paper this project is based on. Vicente-Ludlam et al. 
 # Setup
 The cylinder is setup in a cross-flow configuration and only allowed to move in the transverse direction. It is attached to a spring and the rotation is given about its center of mass. The simulation is 2D in nature and involves zero mass damping. The following equations are valid for the non-dimensional parameters.
 
-$$ Re = \frac{U_{\inf}D}{\nu} $$
-$$ U^* = \frac{U_{\inf}}{f_ND} $$
-$$ m^* = \frac{m}{\frac{\pi}{4}\rho D^2 H} $$
-
+```math
+Re = \frac{U_{\inf}D}{\nu}
+```
+```math
+U^* = \frac{U_{\inf}}{f_ND}
+```
+```math
+m^* = \frac{m}{\frac{\pi}{4}\rho D^2 H}
+```
+For the following test case the value of the Reynold's Number and Mass Ratio is fixed at 100 and 10 respectively. The domain size is 60DX40D with the cylinder situated at (20D,20D).The reduced velocity is varied by changing the spring constant in dynamicMeshDict. 
  
  
