@@ -98,3 +98,7 @@ For the case of reduced velocity 5.5 and a fixed $k^* = 2$, we have the followin
 https://github.com/areenraj/feedback-flow-control-openfoam/assets/80944803/c6506ad4-2e8d-4e6e-9e0c-5e495b4473e7
 
 
+The maximum amplitude of the cylinder across the ranges of the reduced velocity are as follows. Clearly the existence of the initial and lower branches can be seen as predicted by Govardhan and Williamson. The rotating case transitions earlier than the standard one, and clear reduction in the maximum amplitude can be observed. Hence the rotation law helps in curbing the flow induced vibrations of the cylinder.
+![Response](https://github.com/areenraj/feedback-flow-control-openfoam/assets/80944803/d4377d2d-4fe3-46e2-98ee-b204a4e88613)
+To find out the cause of the reduction we take a look at the ratio of the vortex-shedding frequency and the natural frequency of the system for the case of the rotating cylinder. Here, one can clearly see that the region defined by the synchronization of the frequencies is same as that of the high amplitude vibrations. This tells us that the vibrations are caused by wake-body resonance and the reduction in amplitude is due to the decrease in the vortex power by the motion of the cylinder. 
+![Fequen](https://github.com/areenraj/feedback-flow-control-openfoam/assets/80944803/91677fe9-ee47-4ecb-9005-253f9424266e)
