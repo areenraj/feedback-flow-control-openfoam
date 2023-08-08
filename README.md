@@ -105,6 +105,6 @@ The maximum amplitude of the cylinder across the ranges of the reduced velocity 
 To find out the cause of the reduction we take a look at the ratio of the vortex-shedding frequency and the natural frequency of the system for the case of the rotating cylinder. Here, one can clearly see that the region defined by the synchronization of the frequencies is same as that of the high amplitude vibrations. This tells us that the vibrations are caused by wake-body resonance and the reduction in amplitude is due to the decrease in the vortex power by the motion of the cylinder. 
 ![Fequen](https://github.com/areenraj/feedback-flow-control-openfoam/assets/80944803/91677fe9-ee47-4ecb-9005-253f9424266e)
 ### Wake Structure
-The wake structure is also analyzed by the plots of the Z component of the vorticity. We can clearly see a 2P mode for very oow vibrational amplitude and a coalesced 2P mode for higher amplitude vibrations, even for the rotating case. 
+The wake structure is also analyzed by the plots of the Z component of the vorticity. We can clearly see a 2P mode for very low vibrational amplitude and a coalesced 2P mode for higher amplitude vibrations, even for the rotating case. 
 
 ![Non-Rotating U = 4 8(1)](https://github.com/areenraj/feedback-flow-control-openfoam/assets/80944803/27f4e9c4-cd76-4390-9ebb-01960803d3d5)
