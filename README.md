@@ -90,3 +90,7 @@ mpirun -np 8 renumberMesh -overwrite -parallel
 pyFoamPlotRunner.py mpirun -np 8 overPimpleDyMFoam -parallel 
 ```
 The solver used is overPimpleDymFoam available in the ESI version of OpenFOAM, it utilizes a merged PISO-SIMPLE algorithm. The solution is initialized by potentialFoam and the divergence scheme is that of Gauss QUICK. A large amount of outer corectors are utilized along with a Max Courant Number of 0.5. The interpolation scheme for the overset meshes is the standard inverseDistance. 
+
+## Results and Inference
+For the case of reduced velocity 5.5 and a fixed $k^* = 2$, we have the following velocity contours. 
+https://github.com/areenraj/feedback-flow-control-openfoam/assets/80944803/21243e4b-f574-47a3-8c41-1ccceee9bd70
