@@ -35,3 +35,12 @@ For the following test case the value of the Reynold's Number and Mass Ratio is 
 ![mesh](https://github.com/areenraj/feedback-flow-control-openfoam/assets/80944803/62722f46-7666-4029-8134-af314dc3917d)
 *The stationary domain that the cylinder oscillates in*
  
+# Mesh Convergence Study
+A mesh convergence study was done using Shiels et al. as the reference paper - https://doi.org/10.1006/jfls.2000.0330. The test case simulated was that of $m^*=5$ and $k^* = 4.74$. Increasing refinement in each mesh case was employed. 
+
+|               |Coarse Mesh |Fine Mesh    |Finer Mesh   |Shiels et al|
+|---------------|------------|-------------|-------------|------------|
+|$C_d$ Mean     |   2.283    |   1.5165    |   1.725     |     1.7    |       
+|$C_L$ Amplitude|   0.729    |   0.0515    |   0.038805  |     0.04   |
+|St             |   0.17175  |   0.15335   |   0.1565    |     0.156  |
+|$A^*$          |   0.7239   |   0.3683    |   0.421     |     0.46   |
