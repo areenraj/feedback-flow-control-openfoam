@@ -93,4 +93,4 @@ The solver used is overPimpleDymFoam available in the ESI version of OpenFOAM, i
 
 ## Results and Inference
 For the case of reduced velocity 5.5 and a fixed $k^* = 2$, we have the following velocity contours. 
-https://github.com/areenraj/feedback-flow-control-openfoam/assets/80944803/21243e4b-f574-47a3-8c41-1ccceee9bd70
+![contours](https://github.com/areenraj/feedback-flow-control-openfoam/assets/80944803/21243e4b-f574-47a3-8c41-1ccceee9bd70)
