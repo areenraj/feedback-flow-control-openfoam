@@ -1,4 +1,4 @@
-# Flow Control of a Elastically Mounted Cylinder using a Custom Boundary Condition coded in OpenFOAM
+# Feedback Flow Control using a Custom Boundary Condition in OpenFOAM
 
 *Before we begin, I would like to thank Michael Alleto's tutorial for the case of the non-rotating cylinder. I would also like to thank Jozsef Nagy and his excellent explanation of the use of overset meshes in OpenFOAM.*
 
