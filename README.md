@@ -89,6 +89,11 @@ decomposePar
 mpirun -np 8 renumberMesh -overwrite -parallel
 pyFoamPlotRunner.py mpirun -np 8 overPimpleDyMFoam -parallel 
 ```
+5. Extracting the displacement and velocity
+```
+cd backgroundMesh
+./makeFiles
+```
 The solver used is overPimpleDymFoam available in the ESI version of OpenFOAM, it utilizes a merged PISO-SIMPLE algorithm. The solution is initialized by potentialFoam and the divergence scheme is that of Gauss QUICK. A large amount of outer corectors are utilized along with a Max Courant Number of 0.5. The interpolation scheme for the overset meshes is the standard inverseDistance. Mass flux is solved for along with displacement, velocity and pressue and the use of both momentum predictors and adjustment of overset phi are used. 
 
 ## Results and Inference
