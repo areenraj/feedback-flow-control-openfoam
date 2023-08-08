@@ -14,7 +14,7 @@ Finally, we arrive at the paper this project is based on. Vicente-Ludlam et al. 
 # Setup
 The cylinder is setup in a cross-flow configuration and only allowed to move in the transverse direction. It is attached to a spring and the rotation is given about its center of mass. The simulation is 2D in nature and involves zero mass damping. The following equations are valid for the non-dimensional parameters.
 
-$$ Re = \frac{U_{\inf}D}{\mu} $$
+$$ Re = \frac{U_{\inf}D}{\nu} $$
 $$ U^* = \frac{U_{\inf}}{f_ND} $$
 $$ m^* = \frac{m}{\frac{\pi}{4}\rho D^2 H} $$
 
