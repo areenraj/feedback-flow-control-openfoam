@@ -111,5 +111,5 @@ The maximum amplitude of the cylinder across the ranges of the reduced velocity 
 ### Vibration Inducing Phenomena and Synchronization
 To find out the cause of the reduction we take a look at the ratio of the vortex-shedding frequency and the natural frequency of the system for the case of the rotating cylinder. Here, one can clearly see that the region defined by the synchronization of the frequencies is same as that of the high amplitude vibrations. This tells us that the vibrations are caused by wake-body resonance and the reduction in amplitude is due to the decrease in the vortex power by the motion of the cylinder. 
 ![Fequen](https://github.com/areenraj/feedback-flow-control-openfoam/assets/80944803/91677fe9-ee47-4ecb-9005-253f9424266e)
-### Wake Structure
+
 
