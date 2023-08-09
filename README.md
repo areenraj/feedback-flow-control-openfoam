@@ -12,7 +12,7 @@ The test case of an elastically mounted cylinder has been studied extensively by
 Finally, we arrive at the paper this project is based on. Vicente-Ludlam et al. made the use of the Lattice Boltzmann Method to simulate the test case of a rotating, elastically mounted cylinder with one degree of freedom. Their setup involved a constantly changing rotating velocity which was dependent on either the velocity or the acceleration of the cylinder in question. **In this project we will be analyzing a similar rotation law to setup a feedback control system using a custom coded boundary condition in OpenFOAM**
 
 ## Setup
-The cylinder is setup in a cross-flow configuration and only allowed to move in the transverse direction. It is attached to a spring and the rotation is given about its center of mass. The simulation is 2D in nature and involves zero mass damping. The rotation-feedback law relates the angular velocity with the transverses velocity of the The following equations are valid for the non-dimensional parameters.
+The cylinder is setup in a cross-flow configuration and only allowed to move in the transverse direction. It is attached to a spring and the rotation is given about its center of mass. The simulation is 2D in nature and involves zero mass damping. The following equations are valid for the non-dimensional parameters.
 
 ```math
 Re = \frac{U_{\inf}D}{\nu}
@@ -26,6 +26,15 @@ m^* = \frac{m}{\frac{\pi}{4}\rho D^2 H}
 ```math
 k^* = \frac{k}{D}
 ```
+The rotation-feedback law can be summed up as follows,
+```math
+\omega = k^*U_y
+```
+It relates the angular velocity with the transverse velocity of the cylinder, this rotation affects the vortex formation and in turn the fluid forces acting on the body. Which ultimately causes the velocity and the amplitude to change, restarting the feedback loop.
+
+![Blank diagram](https://github.com/areenraj/feedback-flow-control-openfoam/assets/80944803/d38fa5b8-6cbf-4470-9771-3450590aca3e)
+
+
 For the following test case the value of the Reynold's Number and Mass Ratio is fixed at 100 and 10 respectively. 
 
 ### The Chimera Method - Mesh Setup
@@ -33,6 +42,12 @@ The domain size is 60DX40D with the cylinder situated at (20D,20D).The reduced v
 
 ![1-s2 0-S0889974616305096-gr1_lrg](https://github.com/areenraj/feedback-flow-control-openfoam/assets/80944803/85fa6952-359a-4484-ad82-fc12a288a875)
 *Image taken from D. Vicente-Ludlam, A. Barrero-Gil, A. Velazquez* - https://doi.org/10.1016/j.jfluidstructs.2017.05.001
+The equation of the 1DoF mass damper system can be given by
+```math
+m\ddot{y} + c\dot{y} + ky = \text{Lift Force}
+```
+This equation is solved using the symplectic method provided in the 6D0F Motion Solver in OpenFOAM. Alletto's findings have shown that for low mass damping the Newmark solver is unstable while the symplectic one gives better results. 
+
 ![cylinder](https://github.com/areenraj/feedback-flow-control-openfoam/assets/80944803/eec8eb6e-ae6f-482d-8323-94d0385db67e)
 *The circular mesh that represents the body and a little bit of the surrounding domain that actually oscillates*
 ![mesh](https://github.com/areenraj/feedback-flow-control-openfoam/assets/80944803/62722f46-7666-4029-8134-af314dc3917d)
@@ -98,8 +113,7 @@ The solver used is overPimpleDymFoam available in the ESI version of OpenFOAM, i
 
 ## Results and Inference
 ### Velocity Contours and Wake Structures
-For the case of reduced velocity 5.5 and a fixed $k^* = 2$, we have the following velocity contours. The wake structure is also analyzed by the plots of the Z component of the vorticity. We can clearly see a 2P mode for very low vibrational amplitude and a coalesced 2P mode for higher amplitude vibrations, even for the rotating case. In the case of U* = 4.8, the coalescence happens earlier compared the to the higher reduced velocity case.
-
+For the case of reduced velocity 5.5 and a fixed $k^* = 2$, we have the following velocity contours. The wake structure is also analyzed by the plots of the Z component of the vorticity. We can clearly see a 2P mode for very low vibrational amplitude and a coalesced 2P mode for higher amplitude vibrations, even for the rotating case. 
 
 https://github.com/areenraj/feedback-flow-control-openfoam/assets/80944803/c6506ad4-2e8d-4e6e-9e0c-5e495b4473e7
 
