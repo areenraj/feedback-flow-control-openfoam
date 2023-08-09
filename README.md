@@ -145,7 +145,7 @@ Pages 813-851,
 ISSN 0889-9746,
 https://doi.org/10.1006/jfls.1999.0236.
 3. Bourguet, R., & Lo Jacono, D. (2014). Flow-induced vibrations of a rotating cylinder. Journal of Fluid Mechanics, 740, 342-380. https://doi.org/10.1017/jfm.2013.665
-4. GOVARDHAN, R., & WILLIAMSON, C. (2000). Modes of vortex formation and frequency response of a freely vibrating cylinder. Journal of Fluid Mechanics, 420, 85-130. [doi:10.1017/S0022112000001233](https://doi.org/10.1017/S0022112000001233)https://doi.org/10.1017/S0022112000001233
+4. GOVARDHAN, R., & WILLIAMSON, C. (2000). Modes of vortex formation and frequency response of a freely vibrating cylinder. Journal of Fluid Mechanics, 420, 85-130. https://doi.org/10.1017/S0022112000001233
 5. D. Vicente-Ludlam, A. Barrero-Gil, A. Velazquez,
 Flow-Induced Vibration of a rotating circular cylinder using position and velocity feedback,
 Journal of Fluids and Structures,
