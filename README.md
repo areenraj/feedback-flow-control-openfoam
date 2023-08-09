@@ -97,11 +97,13 @@ cd backgroundMesh
 The solver used is overPimpleDymFoam available in the ESI version of OpenFOAM, it utilizes a merged PISO-SIMPLE algorithm. The solution is initialized by potentialFoam and the divergence scheme is that of Gauss QUICK. A large amount of outer corectors are utilized along with a Max Courant Number of 0.5. The interpolation scheme for the overset meshes is the standard inverseDistance. Mass flux is solved for along with displacement, velocity and pressue and the use of both momentum predictors and adjustment of overset phi are used. 
 
 ## Results and Inference
-### Velocity Contours
-For the case of reduced velocity 5.5 and a fixed $k^* = 2$, we have the following velocity contours. 
+### Velocity Contours and Wake Structures
+For the case of reduced velocity 5.5 and a fixed $k^* = 2$, we have the following velocity contours. The wake structure is also analyzed by the plots of the Z component of the vorticity. We can clearly see a 2P mode for very low vibrational amplitude and a coalesced 2P mode for higher amplitude vibrations, even for the rotating case. In the case of U* = 4.8, the coalescence happens earlier compared the to the higher reduced velocity case.
 
 
 https://github.com/areenraj/feedback-flow-control-openfoam/assets/80944803/c6506ad4-2e8d-4e6e-9e0c-5e495b4473e7
+
+![Non-Rotating U = 4 8(1)](https://github.com/areenraj/feedback-flow-control-openfoam/assets/80944803/27f4e9c4-cd76-4390-9ebb-01960803d3d5)
 
 ### Response Curve and Amplitude Branches
 The maximum amplitude of the cylinder across the ranges of the reduced velocity are as follows. Clearly the existence of the initial and lower branches can be seen as stated by Khalak and Williamson. The rotating case transitions earlier than the standard one, **and clear reduction in the maximum amplitude can be observed. Hence the rotation law helps in curbing the flow induced vibrations of the cylinder.**
@@ -110,6 +112,4 @@ The maximum amplitude of the cylinder across the ranges of the reduced velocity 
 To find out the cause of the reduction we take a look at the ratio of the vortex-shedding frequency and the natural frequency of the system for the case of the rotating cylinder. Here, one can clearly see that the region defined by the synchronization of the frequencies is same as that of the high amplitude vibrations. This tells us that the vibrations are caused by wake-body resonance and the reduction in amplitude is due to the decrease in the vortex power by the motion of the cylinder. 
 ![Fequen](https://github.com/areenraj/feedback-flow-control-openfoam/assets/80944803/91677fe9-ee47-4ecb-9005-253f9424266e)
 ### Wake Structure
-The wake structure is also analyzed by the plots of the Z component of the vorticity. We can clearly see a 2P mode for very low vibrational amplitude and a coalesced 2P mode for higher amplitude vibrations, even for the rotating case. 
 
-![Non-Rotating U = 4 8(1)](https://github.com/areenraj/feedback-flow-control-openfoam/assets/80944803/27f4e9c4-cd76-4390-9ebb-01960803d3d5)
