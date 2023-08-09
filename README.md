@@ -28,7 +28,7 @@ k^* = \frac{k}{D}
 ```
 The rotation-feedback law can be summed up as follows,
 ```math
-\omega = k^*U_y
+\omega = kU_y
 ```
 It relates the angular velocity with the transverse velocity of the cylinder, this rotation affects the vortex formation and in turn the fluid forces acting on the body. Which ultimately causes the velocity and the amplitude to change, restarting the feedback loop.
 
