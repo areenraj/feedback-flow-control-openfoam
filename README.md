@@ -126,4 +126,41 @@ The maximum amplitude of the cylinder across the ranges of the reduced velocity 
 To find out the cause of the reduction we take a look at the ratio of the vortex-shedding frequency and the natural frequency of the system for the case of the rotating cylinder. Here, one can clearly see that the region defined by the synchronization of the frequencies is same as that of the high amplitude vibrations. This tells us that the vibrations are caused by wake-body resonance and the reduction in amplitude is due to the decrease in the vortex power by the motion of the cylinder. 
 ![Fequen](https://github.com/areenraj/feedback-flow-control-openfoam/assets/80944803/91677fe9-ee47-4ecb-9005-253f9424266e)
 
+## References
 
+1. S.P. Singh, S. Mittal,
+Vortex-induced oscillations at low Reynolds numbers: Hysteresis and vortex-shedding modes,
+Journal of Fluids and Structures,
+Volume 20, Issue 8,
+2005,
+Pages 1085-1104,
+ISSN 0889-9746,
+https://doi.org/10.1016/j.jfluidstructs.2005.05.011.
+2. A KHALAK, C.H.K WILLIAMSON,
+MOTIONS, FORCES AND MODE TRANSITIONS IN VORTEX-INDUCED VIBRATIONS AT LOW MASS-DAMPING,
+Journal of Fluids and Structures,
+Volume 13, Issues 7–8,
+1999,
+Pages 813-851,
+ISSN 0889-9746,
+https://doi.org/10.1006/jfls.1999.0236.
+3. Bourguet, R., & Lo Jacono, D. (2014). Flow-induced vibrations of a rotating cylinder. Journal of Fluid Mechanics, 740, 342-380. https://doi.org/10.1017/jfm.2013.665
+4. GOVARDHAN, R., & WILLIAMSON, C. (2000). Modes of vortex formation and frequency response of a freely vibrating cylinder. Journal of Fluid Mechanics, 420, 85-130. [doi:10.1017/S0022112000001233](https://doi.org/10.1017/S0022112000001233)https://doi.org/10.1017/S0022112000001233
+5. D. Vicente-Ludlam, A. Barrero-Gil, A. Velazquez,
+Flow-Induced Vibration of a rotating circular cylinder using position and velocity feedback,
+Journal of Fluids and Structures,
+Volume 72,
+2017,
+Pages 127-151,
+ISSN 0889-9746,
+https://doi.org/10.1016/j.jfluidstructs.2017.05.001.
+6. D. SHIELS, A. LEONARD, A. ROSHKO,
+FLOW-INDUCED VIBRATION OF A CIRCULAR CYLINDER AT LIMITING STRUCTURAL PARAMETERS,
+Journal of Fluids and Structures,
+Volume 15, Issue 1,
+2001,
+Pages 3-21,
+ISSN 0889-9746,
+https://doi.org/10.1006/jfls.2000.0330.
+7. Alletto, M. (2022). Comparison of Overset Mesh with Morphing Mesh: Flow Over a Forced Oscillating and Freely Oscillating 2D Cylinder. OpenFOAM® Journal, 2, 13–30. https://doi.org/10.51560/ofj.v2.47
+8. Jozsef Nagzy's explanation on the use of overset meshes - https://youtu.be/nCIsS0VqypA
