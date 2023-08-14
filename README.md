@@ -49,7 +49,9 @@ m\ddot{y} + c\dot{y} + ky = \text{Lift Force}
 This equation is solved using the symplectic method provided in the 6D0F Motion Solver in OpenFOAM. Alletto's findings have shown that for low mass damping the Newmark solver is unstable while the symplectic one gives better results. 
 
 ![cylinder](https://github.com/areenraj/feedback-flow-control-openfoam/assets/80944803/eec8eb6e-ae6f-482d-8323-94d0385db67e)
+<br>
 *The circular mesh that represents the body and a little bit of the surrounding domain that actually oscillates*
+
 ![mesh](https://github.com/areenraj/feedback-flow-control-openfoam/assets/80944803/62722f46-7666-4029-8134-af314dc3917d)
 *The stationary domain that the cylinder oscillates in*
  
